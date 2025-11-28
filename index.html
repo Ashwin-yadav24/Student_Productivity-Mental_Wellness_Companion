@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusGrid | Student Productivity Companion</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --neon-green: #00ff88;
+            --dark-green: #004d29;
+            --bg-black: #0a0a0a;
+            --card-black: #121212;
+        }
+
+        body {
+            background-color: var(--bg-black);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .text-neon {
+            color: var(--neon-green);
+        }
+
+        .bg-neon {
+            background-color: var(--neon-green);
+        }
+
+        .border-neon {
+            border-color: var(--neon-green);
+        }
+
+        /* Glow Effects */
+        .glow {
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+        }
+
+        .glow-text {
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+        }
+
+        /* Utilities */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Progress Bar Transition */
+        .progress-bar {
+            transition: width 0.5s ease-out;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden">
+
+    <nav
+        class="w-full p-6 flex justify-between items-center border-b border-gray-800 bg-black/80 backdrop-blur-md fixed top-0 z-50">
+        <div class="flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+            <i data-lucide="zap" class="text-neon h-6 w-6"></i>
+            <span class="text-xl font-bold tracking-tighter">FOCUS<span class="text-neon">GRID</span></span>
+        </div>
+        <div class="flex items-center">
+            <a href="#"
+                class="hidden md:inline text-sm font-semibold text-gray-400 hover:text-white mr-6 transition">HOME</a>
+
+            <a href="#contact-section"
+                class="hidden md:inline text-sm font-semibold text-gray-400 hover:text-white mr-6 transition">CONTACT</a>
+
+            <a href="Data_Insights_Dashboard.html" target="_blank" class="mr-4">
+                <button
+                    class="px-4 py-2 text-sm font-bold text-white border border-gray-700 rounded hover:border-neon hover:text-neon transition">
+                    INSIGHTS
+                </button>
+            </a>
+
+            <a href="Stress_Relief_Games.html" target="_blank" class="mr-4">
+                <button
+                    class="px-4 py-2 text-sm font-bold text-white border border-gray-700 rounded hover:border-neon hover:text-neon transition">
+                    De-Stress
+                </button>
+            </a>
+
+            <a href="#app-section"
+                class="px-4 py-2 text-sm font-bold text-black bg-neon rounded hover:bg-white transition glow">LAUNCH
+                APP</a>
+        </div>
+    </nav>
+
+    <div class="pt-32 flex flex-col gap-0">
+
+        <section id="home" class="px-6 fade-in pb-20">
+            <div class="max-w-5xl mx-auto text-center">
+                <div
+                    class="inline-block px-3 py-1 mb-6 border border-gray-700 rounded-full bg-gray-900 text-xs text-neon tracking-widest uppercase">
+                    Beta Version 1.0
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-tight">
+                    Kill Procrastination.<br>
+                    <span class="text-neon glow-text">Gamify Your Grades.</span>
+                </h1>
+                <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10">
+                    Stop doom-scrolling. Start leveling up. FocusGrid turns your study sessions into a game, helping you
+                    track mood, build streaks, and conquer academic anxiety.
+                </p>
+                <a href="#app-section"
+                    class="inline-flex px-8 py-4 text-lg font-bold text-black bg-neon rounded-lg hover:bg-white hover:scale-105 transition duration-300 glow items-center gap-2 mx-auto">
+                    <i data-lucide="play"></i> ENTER THE GRID
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mt-24">
+                <div class="p-6 border border-gray-800 bg-[#121212] rounded-xl hover:border-neon transition group">
+                    <div
+                        class="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center mb-4 text-neon group-hover:bg-neon group-hover:text-black transition">
+                        <i data-lucide="timer"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Deep Focus Mode</h3>
+                    <p class="text-gray-500 text-sm">Custom timers that lock you in. No distractions, just pure
+                        productivity.</p>
+                </div>
+                <div class="p-6 border border-gray-800 bg-[#121212] rounded-xl hover:border-neon transition group">
+                    <div
+                        class="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center mb-4 text-neon group-hover:bg-neon group-hover:text-black transition">
+                        <i data-lucide="trophy"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Earn XP & Rank Up</h3>
+                    <p class="text-gray-500 text-sm">Every minute studied is XP earned. Climb from Novice to Master
+                        Scholar.</p>
+                </div>
+                <div class="p-6 border border-gray-800 bg-[#121212] rounded-xl hover:border-neon transition group">
+                    <div
+                        class="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center mb-4 text-neon group-hover:bg-neon group-hover:text-black transition">
+                        <i data-lucide="brain-circuit"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Wellness Check-ins</h3>
+                    <p class="text-gray-500 text-sm">Track your mood post-study. Prevent burnout before it happens.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="app-section" class="py-20 px-4 bg-black/50 border-t border-gray-900">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-10 text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-2">Focus<span class="text-neon">Zone</span></h2>
+                    <p class="text-gray-400">Manage tasks, set timers, and earn XP.</p>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-6 min-h-[600px]">
+                    <aside class="w-full md:w-1/3 flex flex-col gap-6">
+                        <div class="bg-[#121212] border border-gray-800 rounded-xl p-6 relative overflow-hidden">
+                            <div class="absolute top-0 right-0 p-4 opacity-10">
+                                <i data-lucide="gamepad-2" class="w-24 h-24"></i>
+                            </div>
+                            <div class="flex justify-between items-end mb-2">
+                                <div>
+                                    <p class="text-gray-400 text-xs uppercase tracking-widest">Current Rank</p>
+                                    <h2 class="text-2xl font-bold text-white" id="rank-display">Novice Coder</h2>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-neon font-mono text-xl font-bold">Lvl <span
+                                            id="level-display">1</span></p>
+                                </div>
+                            </div>
+                            <div class="w-full bg-gray-800 h-3 rounded-full overflow-hidden mt-2">
+                                <div id="xp-bar" class="bg-neon h-full progress-bar" style="width: 0%"></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2 text-right"><span id="xp-display">0</span> / 100 XP to
+                                next level</p>
+                            <div
+                                class="mt-6 flex items-center gap-3 bg-gray-900/50 p-3 rounded-lg border border-gray-800">
+                                <i data-lucide="flame" class="text-orange-500"></i>
+                                <div>
+                                    <p class="text-xs text-gray-400">Daily Streak</p>
+                                    <p class="font-bold text-white"><span id="streak-display">0</span> Days</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-[#121212] border border-gray-800 rounded-xl p-6 flex-1 flex flex-col">
+                            <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                                <i data-lucide="check-square" class="text-neon w-5 h-5"></i> Mission Log
+                            </h3>
+                            <div class="flex gap-2 mb-4">
+                                <input type="text" id="task-input" placeholder="Add a new goal..."
+                                    class="w-full bg-gray-900 border border-gray-700 rounded p-2 text-sm text-white focus:outline-none focus:border-neon">
+                                <button onclick="addTask()"
+                                    class="bg-gray-800 hover:bg-neon hover:text-black text-neon border border-gray-700 rounded px-3 transition">
+                                    <i data-lucide="plus"></i>
+                                </button>
+                            </div>
+                            <ul id="task-list" class="space-y-2 overflow-y-auto max-h-[300px] pr-2">
+                                <li class="text-gray-500 text-sm italic text-center mt-10">No active missions.</li>
+                            </ul>
+                        </div>
+                    </aside>
+
+                    <section class="w-full md:w-2/3 flex flex-col gap-6">
+                        <div
+                            class="bg-[#121212] border border-gray-800 rounded-xl p-8 md:p-12 flex flex-col items-center justify-center relative flex-grow">
+                            <h2 class="text-gray-400 uppercase tracking-widest text-sm mb-8">Focus Session</h2>
+                            <div
+                                class="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-gray-800 flex items-center justify-center mb-10 shadow-[0_0_50px_-20px_rgba(0,0,0,1)]">
+                                <div
+                                    class="absolute w-full h-full rounded-full border-4 border-neon opacity-20 animate-pulse">
+                                </div>
+                                <div class="text-center z-10">
+                                    <h1 id="timer-display"
+                                        class="text-6xl md:text-8xl font-mono font-bold text-white tracking-tighter glow-text">
+                                        25:00</h1>
+                                    <p id="timer-status"
+                                        class="text-neon text-sm uppercase mt-2 font-bold tracking-widest">READY</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <button id="start-btn" onclick="startTimer()"
+                                    class="w-32 py-3 bg-neon text-black font-bold rounded hover:bg-white hover:scale-105 transition glow">
+                                    START
+                                </button>
+                                <button id="reset-btn" onclick="resetTimer()"
+                                    class="w-16 py-3 bg-gray-800 text-white font-bold rounded hover:bg-gray-700 transition">
+                                    <i data-lucide="rotate-ccw" class="mx-auto"></i>
+                                </button>
+                            </div>
+                            <div class="flex gap-2 mt-8">
+                                <button onclick="setTime(25)"
+                                    class="px-3 py-1 text-xs border border-gray-700 rounded text-gray-400 hover:border-neon hover:text-neon transition">25m</button>
+                                <button onclick="setTime(50)"
+                                    class="px-3 py-1 text-xs border border-gray-700 rounded text-gray-400 hover:border-neon hover:text-neon transition">50m</button>
+                                <button onclick="setTime(15)"
+                                    class="px-3 py-1 text-xs border border-gray-700 rounded text-gray-400 hover:border-neon hover:text-neon transition">15m</button>
+                            </div>
+                        </div>
+                        <div id="mood-section" class="bg-gray-900 border border-gray-800 rounded-xl p-6 hidden">
+                            <h3 class="text-lg font-bold mb-4 text-center">How are you feeling right now?</h3>
+                            <div class="flex justify-center gap-6">
+                                <button onclick="logMood('stressed')"
+                                    class="text-3xl hover:scale-125 transition grayscale hover:grayscale-0"
+                                    title="Stressed">😫</button>
+                                <button onclick="logMood('neutral')"
+                                    class="text-3xl hover:scale-125 transition grayscale hover:grayscale-0"
+                                    title="Neutral">😐</button>
+                                <button onclick="logMood('focused')"
+                                    class="text-3xl hover:scale-125 transition grayscale hover:grayscale-0"
+                                    title="Focused">🧠</button>
+                                <button onclick="logMood('happy')"
+                                    class="text-3xl hover:scale-125 transition grayscale hover:grayscale-0"
+                                    title="Accomplished">😎</button>
+                            </div>
+                            <p id="mood-message" class="text-center text-sm text-neon mt-4 hidden">Mood logged! +10 XP
+                            </p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-section" class="py-20 border-t border-gray-900 bg-[#050505]">
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center px-6">
+                <div>
+                    <h2 class="text-3xl font-bold mb-4">Have questions? <br><span class="text-neon">Let's
+                            Connect.</span></h2>
+                    <p class="text-gray-400 mb-8">
+                        Whether you want to suggest a feature, report a bug, or just share your high score, our team is
+                        ready to listen.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3 text-gray-300">
+                            <i data-lucide="mail" class="text-neon w-5 h-5"></i>
+                            <span>support@focusgrid.app</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-gray-300">
+                            <i data-lucide="map-pin" class="text-neon w-5 h-5"></i>
+                            <span>Student Hub, University Campus</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-[#121212] p-8 rounded-2xl border border-gray-800 shadow-2xl">
+                    <form id="contact-form" onsubmit="handleContactSubmit(event)">
+                        <div class="mb-4">
+                            <label class="block text-gray-500 text-xs uppercase tracking-wider mb-2">Your Name</label>
+                            <input type="text" required
+                                class="w-full bg-gray-900 border border-gray-700 rounded p-3 text-white focus:outline-none focus:border-neon transition"
+                                placeholder="Your Name">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-500 text-xs uppercase tracking-wider mb-2">Email
+                                Address</label>
+                            <input type="email" required
+                                class="w-full bg-gray-900 border border-gray-700 rounded p-3 text-white focus:outline-none focus:border-neon transition"
+                                placeholder="youremail@gmail.com">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-500 text-xs uppercase tracking-wider mb-2">Message</label>
+                            <textarea rows="4" required
+                                class="w-full bg-gray-900 border border-gray-700 rounded p-3 text-white focus:outline-none focus:border-neon transition"
+                                placeholder="I have an idea for..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3 bg-gray-800 text-white font-bold rounded 
+         hover:bg-[#00ff6a] hover:text-black 
+         transition duration-300 flex justify-center items-center gap-2 group">
+                            Send Message
+                            <i data-lucide="send" class="w-4 h-4 group-hover:translate-x-1 transition"></i>
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer id="main-footer" class="w-full bg-[#050505] border-t border-gray-900 pt-16 pb-8">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-4">
+                        <i data-lucide="zap" class="text-neon h-5 w-5"></i>
+                        <span class="text-lg font-bold">FOCUS<span class="text-neon">GRID</span></span>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed">
+                        The ultimate productivity ecosystem designed for students who want to study smarter, not harder.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Platform</h4>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li><a href="#" class="hover:text-neon transition">Home</a></li>
+                        <li><a href="#app-section" class="hover:text-neon transition">Web App</a></li>
+                        <li><a href="Data_Insights_Dashboard.html" class="hover:text-neon transition">Insights</a></li>
+                        <li><a href="Stress_Relief_Games.html" class="hover:text-neon transition">De-Stress Zone</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Community</h4>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li><a href="#" class="hover:text-neon transition">Discord Server</a></li>
+                        <li><a href="#" class="hover:text-neon transition">Study Groups</a></li>
+                        <li><a href="#" class="hover:text-neon transition">Leaderboard</a></li>
+                        <li><a href="#" class="hover:text-neon transition">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Follow Us</h4>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded bg-gray-900 flex items-center justify-center text-gray-400 hover:bg-neon hover:text-black transition duration-300">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded bg-gray-900 flex items-center justify-center text-gray-400 hover:bg-neon hover:text-black transition duration-300">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded bg-gray-900 flex items-center justify-center text-gray-400 hover:bg-neon hover:text-black transition duration-300">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded bg-gray-900 flex items-center justify-center text-gray-400 hover:bg-neon hover:text-black transition duration-300">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
+                <p>&copy; 2025 FocusGrid Project. All rights reserved.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-gray-400">Privacy Policy</a>
+                    <a href="#" class="hover:text-gray-400">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- 1. GAME STATE MANAGEMENT ---
+        let state = {
+            xp: 0,
+            level: 1,
+            streak: 1,
+            tasks: [],
+            timeLeft: 1500, // 25 minutes in seconds
+            isActive: false,
+            initialTime: 1500
+        };
+
+        // Load from LocalStorage if available
+        if (localStorage.getItem('focusGridState')) {
+            const saved = JSON.parse(localStorage.getItem('focusGridState'));
+            state = { ...state, xp: saved.xp, level: saved.level, streak: saved.streak, tasks: saved.tasks };
+        }
+
+        let timerInterval;
+
+        // --- 2. DOM UPDATES ---
+        function updateUI() {
+            // Stats
+            document.getElementById('xp-display').innerText = state.xp % 100; // XP within current level
+            document.getElementById('level-display').innerText = state.level;
+            document.getElementById('streak-display').innerText = state.streak;
+
+            // Progress Bar
+            const percentage = (state.xp % 100);
+            document.getElementById('xp-bar').style.width = `${percentage}%`;
+
+            // Rank Name
+            const ranks = ["Novice", "Apprentice", "Scholar", "Deep Worker", "Grandmaster"];
+            const rankIndex = Math.min(state.level - 1, ranks.length - 1);
+            document.getElementById('rank-display').innerText = ranks[rankIndex] + " Coder";
+
+            // Timer
+            const minutes = Math.floor(state.timeLeft / 60);
+            const seconds = state.timeLeft % 60;
+            document.getElementById('timer-display').innerText =
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+            // Save state
+            localStorage.setItem('focusGridState', JSON.stringify(state));
+        }
+
+        // --- 3. TIMER LOGIC ---
+        function setTime(minutes) {
+            if (state.isActive) return;
+            state.timeLeft = minutes * 60;
+            state.initialTime = minutes * 60;
+            updateUI();
+        }
+
+        function startTimer() {
+            if (state.isActive) {
+                // Pause Logic
+                clearInterval(timerInterval);
+                state.isActive = false;
+                document.getElementById('start-btn').innerText = "RESUME";
+                document.getElementById('start-btn').classList.remove('bg-red-500', 'text-white');
+                document.getElementById('start-btn').classList.add('bg-neon', 'text-black');
+                document.getElementById('timer-status').innerText = "PAUSED";
+                document.getElementById('timer-status').classList.add('text-yellow-500');
+                document.getElementById('timer-status').classList.remove('text-neon', 'animate-pulse');
+            } else {
+                // Start Logic
+                state.isActive = true;
+                document.getElementById('start-btn').innerText = "PAUSE";
+                document.getElementById('start-btn').classList.remove('bg-neon', 'text-black');
+                document.getElementById('start-btn').classList.add('bg-red-500', 'text-white'); // Red for stop
+                document.getElementById('timer-status').innerText = "FOCUSING...";
+                document.getElementById('timer-status').classList.remove('text-yellow-500');
+                document.getElementById('timer-status').classList.add('text-neon', 'animate-pulse');
+                document.getElementById('mood-section').classList.add('hidden'); // Hide mood during focus
+
+                timerInterval = setInterval(() => {
+                    if (state.timeLeft > 0) {
+                        state.timeLeft--;
+                        updateUI();
+                    } else {
+                        completeSession();
+                    }
+                }, 1000);
+            }
+        }
+
+        function resetTimer() {
+            clearInterval(timerInterval);
+            state.isActive = false;
+            state.timeLeft = state.initialTime;
+            document.getElementById('start-btn').innerText = "START";
+            document.getElementById('start-btn').classList.add('bg-neon', 'text-black');
+            document.getElementById('start-btn').classList.remove('bg-red-500', 'text-white');
+            document.getElementById('timer-status').innerText = "READY";
+            document.getElementById('timer-status').classList.remove('animate-pulse', 'text-yellow-500');
+            document.getElementById('timer-status').classList.add('text-neon');
+            updateUI();
+        }
+
+        function completeSession() {
+            clearInterval(timerInterval);
+            state.isActive = false;
+
+            // Calculate XP (1 min = 1 XP)
+            const xpEarned = Math.floor(state.initialTime / 60);
+            addXP(xpEarned);
+
+            // UI Updates
+            document.getElementById('timer-status').innerText = "SESSION COMPLETE!";
+            document.getElementById('start-btn').innerText = "START";
+            document.getElementById('start-btn').classList.add('bg-neon', 'text-black');
+            document.getElementById('start-btn').classList.remove('bg-red-500', 'text-white');
+
+            // Show Mood Tracker
+            document.getElementById('mood-section').classList.remove('hidden');
+
+            // Play simple beep
+            const audio = new Audio('https://actions.google.com/sounds/v1/alarms/beep_short.ogg');
+            audio.play().catch(e => console.log("Audio play failed"));
+        }
+
+        // --- 4. GAMIFICATION LOGIC ---
+        function addXP(amount) {
+            state.xp += amount;
+
+            // Level Up Check (Every 100 XP)
+            const newLevel = Math.floor(state.xp / 100) + 1;
+            if (newLevel > state.level) {
+                state.level = newLevel;
+                alert(`LEVEL UP! You are now Level ${state.level}`);
+            }
+            updateUI();
+        }
+
+        // --- 5. TASK LOGIC ---
+        function renderTasks() {
+            const list = document.getElementById('task-list');
+            list.innerHTML = "";
+            if (state.tasks.length === 0) {
+                list.innerHTML = '<li class="text-gray-500 text-sm italic text-center mt-10">No active missions.</li>';
+                return;
+            }
+
+            state.tasks.forEach((task, index) => {
+                const li = document.createElement('li');
+                li.className = "flex justify-between items-center bg-gray-900 p-3 rounded border border-gray-800 hover:border-gray-600 transition group";
+                li.innerHTML = `
+                    <span class="${task.completed ? 'line-through text-gray-600' : 'text-gray-300'} text-sm">${task.text}</span>
+                    <button onclick="deleteTask(${index})" class="text-gray-600 hover:text-red-500 opacity-0 group-hover:opacity-100 transition"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
+                `;
+                li.onclick = (e) => {
+                    if (e.target.closest('button')) return; // Don't toggle if delete button clicked
+                    toggleTask(index);
+                }
+                list.appendChild(li);
+            });
+            lucide.createIcons();
+        }
+
+        function addTask() {
+            const input = document.getElementById('task-input');
+            const text = input.value.trim();
+            if (text) {
+                state.tasks.push({ text: text, completed: false });
+                input.value = "";
+                renderTasks();
+                updateUI();
+            }
+        }
+
+        function toggleTask(index) {
+            state.tasks[index].completed = !state.tasks[index].completed;
+            if (state.tasks[index].completed) {
+                addXP(5); // 5 XP reward for completing task
+            }
+            renderTasks();
+        }
+
+        function deleteTask(index) {
+            state.tasks.splice(index, 1);
+            renderTasks();
+            updateUI();
+        }
+
+        // --- 6. MOOD LOGIC ---
+        function logMood(mood) {
+            document.getElementById('mood-message').classList.remove('hidden');
+            document.getElementById('mood-message').innerText = `Logged: ${mood.toUpperCase()}. +10 XP for checking in!`;
+            addXP(10);
+
+            // Hide section after delay
+            setTimeout(() => {
+                document.getElementById('mood-section').classList.add('hidden');
+                document.getElementById('mood-message').classList.add('hidden');
+                resetTimer();
+            }, 2000);
+        }
+
+        // --- 7. FORM LOGIC ---
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerHTML;
+
+            btn.innerHTML = 'Message Sent! <i data-lucide="check" class="w-4 h-4"></i>';
+            btn.classList.add('bg-neon', 'text-black');
+            btn.classList.remove('bg-gray-800', 'text-white');
+
+            setTimeout(() => {
+                e.target.reset();
+                btn.innerHTML = originalText;
+                btn.classList.remove('bg-neon', 'text-black');
+                btn.classList.add('bg-gray-800', 'text-white');
+                lucide.createIcons();
+            }, 3000);
+            lucide.createIcons();
+        }
+
+        // INITIALIZATION
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            updateUI();
+            renderTasks();
+
+            // Allow Enter key to add task
+            document.getElementById('task-input').addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') addTask();
+            });
+        });
+
+    </script>
+</body>
+
+</html>
